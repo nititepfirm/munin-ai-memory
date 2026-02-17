@@ -24,6 +24,11 @@ Standard RAG (Retrieval-Augmented Generation) systems blindly retrieve data, flo
 | **Data Lifecycle** | Data is permanent (append-only) | **Active Forgetting** (TTL & Topic-based) |
 | **Cost Efficiency** | High (irrelevant tokens included) | **Optimized** (only high-value context) |
 
+## 📸 UI Example
+
+<img src="docs/ui_example.png" alt="Munin Memory Card UI" width="600">
+
+
 ## ✨ Key Features
 
 - **🦅 Selective Forgetting**: Automatically delete memories that are outdated (TTL) or irrelevant to the current context.
