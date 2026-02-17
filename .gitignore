@@ -1,0 +1,27 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Local Databases
+munin_brain/
+chroma_db/
+data/
+
+# Environment Variables
+.env
+
+# OS Files
+.DS_Store
+
+# IDE Settings
+.vscode/
+
+# Project Specific
+*.log
+.coverage
+htmlcov/

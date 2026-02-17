@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  munin-api:
+    build: .
+    container_name: munin-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist ChromaDB data
+      - ./munin_brain:/app/munin_brain
+    environment:
+      - CHROMA_DB_PATH=/app/munin_brain
+    restart: unless-stopped
