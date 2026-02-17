@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/logo.png" alt="Munin Logo" width="200">
+  <img src="docs/logo.svg" alt="Munin Logo" width="200">
   <h1>Munin</h1>
   <h3>The AI Memory that knows when to FORGET.</h3>
 
