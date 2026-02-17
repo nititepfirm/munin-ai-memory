@@ -1,41 +1,46 @@
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00f260;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0575E6;stop-opacity:1" />
+    <linearGradient id="cyber-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
     </linearGradient>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
   </defs>
 
-  <!-- Dark Background with Grid -->
+  <!-- Background -->
   <rect width="100%" height="100%" fill="#0b0c10"/>
-  <path d="M0 20 H200 M0 60 H200 M0 100 H200 M0 140 H200 M0 180 H200" stroke="#1f2833" stroke-width="0.5"/>
-  <path d="M20 0 V200 M60 0 V200 M100 0 V200 M140 0 V200 M180 0 V200" stroke="#1f2833" stroke-width="0.5"/>
+  
+  <!-- Circuit Grid -->
+  <path d="M0 50 H200 M0 100 H200 M0 150 H200" stroke="#1f2833" stroke-width="0.5" stroke-dasharray="5,5"/>
+  <path d="M50 0 V200 M100 0 V200 M150 0 V200" stroke="#1f2833" stroke-width="0.5" stroke-dasharray="5,5"/>
 
-  <!-- Cyber Raven Geometric Construct -->
-  <g transform="translate(100, 90) scale(0.8)">
-    <!-- Head -->
-    <path d="M-40 -40 L 0 -20 L 40 -40 L 20 0 L 50 10 L 10 30 L 0 60 L -10 30 L -50 10 L -20 0 Z" fill="#c5c6c7" stroke="#66fcf1" stroke-width="2" filter="url(#glow)"/>
-    
-    <!-- Wings (Circuit Lines) -->
-    <path d="M-50 10 L -90 -10 L -80 30 L -50 40" fill="none" stroke="#45a29e" stroke-width="2"/>
-    <path d="M50 10 L 90 -10 L 80 30 L 50 40" fill="none" stroke="#45a29e" stroke-width="2"/>
-    
-    <!-- Synthetic Eye -->
-    <circle cx="15" cy="-10" r="4" fill="#ff0000" filter="url(#glow)"/>
-    
-    <!-- Data Connection Points -->
-    <circle cx="-90" cy="-10" r="2" fill="#66fcf1"/>
-    <circle cx="90" cy="-10" r="2" fill="#66fcf1"/>
-    <circle cx="0" cy="60" r="2" fill="#66fcf1"/>
+  <!-- Main Raven Silhouette (More Organic Shape) -->
+  <g transform="translate(100, 100) scale(0.85)">
+      <!-- Body & Head -->
+      <path d="M-30 -50 C -50 -70, -10 -80, 20 -70 C 40 -60, 50 -40, 60 -20 C 70 10, 60 50, 20 80 C 0 90, -40 80, -60 50 C -70 30, -60 -10, -30 -50 Z" fill="url(#cyber-body)" stroke="#e94560" stroke-width="1.5"/>
+      
+      <!-- Wing Detail (Folded) -->
+      <path d="M-30 -30 C -50 -10, -40 30, -20 60" fill="none" stroke="#45a29e" stroke-width="2"/>
+      <path d="M-20 -20 C -30 0, -20 40, -10 50" fill="none" stroke="#45a29e" stroke-width="1"/>
+      
+      <!-- Eye -->
+      <path d="M 25 -55 A 5 5 0 1 1 35 -55 A 5 5 0 1 1 25 -55" fill="#e94560" filter="url(#neon-glow)"/>
+      <circle cx="30" cy="-55" r="2" fill="#fff"/>
+
+       <!-- Beak -->
+      <path d="M 50 -45 L 80 -40 L 55 -30 Z" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+      
+      <!-- Legs/Feet on Chip -->
+      <path d="M-10 80 L -10 95 M 10 80 L 10 95" stroke="#a2a8d3" stroke-width="2"/>
+      <rect x="-30" y="95" width="60" height="10" fill="#1f2833" stroke="#66fcf1" stroke-width="1"/>
   </g>
 
-  <!-- Text -->
-  <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Courier New, monospace" font-size="22" fill="#66fcf1" font-weight="bold" letter-spacing="2" filter="url(#glow)">MUNIN_AI</text>
+  <!-- Title -->
+  <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#66fcf1" letter-spacing="2" filter="url(#neon-glow)">MUNIN</text>
 </svg>
